@@ -8,43 +8,87 @@ namespace SuiSuiShou.CIC.Core
     public static class Photographer
     {
         private static ImageCapture _imageCapture = new ImageCapture();
-        
+
         /// <summary>
         /// Capture image resolution
         /// </summary>
-        public static Vector2Int ImageResolution { get => _imageCapture.ImageResolution; set => _imageCapture.ImageResolution = value; }
+        public static Vector2Int ImageResolution
+        {
+            get => _imageCapture.ImageResolution;
+            set => _imageCapture.ImageResolution = value;
+        }
+
         /// <summary>
         /// Target camera for capturing
         /// </summary>
-        public static Camera TargetCamera { get  => _imageCapture.TargetCamera; set => _imageCapture.TargetCamera = value; }
+        public static Camera TargetCamera
+        {
+            get => _imageCapture.TargetCamera;
+            set => _imageCapture.TargetCamera = value;
+        }
+
         /// <summary>
         /// Image file write type
         /// </summary>
-        public static WriteFileType WriteType { get => _imageCapture.WriteType; set => _imageCapture.WriteType = value; }
+        public static WriteFileType WriteType
+        {
+            get => _imageCapture.WriteType;
+            set => _imageCapture.WriteType = value;
+        }
+
         /// <summary>
         /// Image type
         /// </summary>
-        public static ImageFormat ImageFormat { get => _imageCapture.ImageFormat; set => _imageCapture.ImageFormat = value; }
+        public static ImageFormat ImageFormat
+        {
+            get => _imageCapture.ImageFormat;
+            set => _imageCapture.ImageFormat = value;
+        }
+
         /// <summary>
         /// True for logging capture status
         /// </summary>
-        public static bool IsLogCap { get => _imageCapture.IsLogCap; set => _imageCapture.IsLogCap = value; }
+        public static bool IsLogCap
+        {
+            get => _imageCapture.IsLogCap;
+            set => _imageCapture.IsLogCap = value;
+        }
+
         /// <summary>
         /// True for sequential image file name
         /// </summary>
-        public static bool IsImageSerial { get => _imageCapture.IsImageSerial; set => _imageCapture.IsImageSerial = value; }
+        public static bool IsImageSerial
+        {
+            get => _imageCapture.IsImageSerial;
+            set => _imageCapture.IsImageSerial = value;
+        }
+
         /// <summary>
         /// True for changing ImageResolution in editor
         /// </summary>
-        public static bool IsOverrideCameraResolution { get => _imageCapture.IsOverrideCameraResolution; set => _imageCapture.IsOverrideCameraResolution = value; }
+        public static bool IsOverrideCameraResolution
+        {
+            get => _imageCapture.IsOverrideCameraResolution;
+            set => _imageCapture.IsOverrideCameraResolution = value;
+        }
+
         /// <summary>
         /// Fold path for image file to writing
         /// </summary>
-        public static string SaveFolderPath { get => _imageCapture.SaveFolderPath; set => _imageCapture.SaveFolderPath = value; }
+        public static string SaveFolderPath
+        {
+            get => _imageCapture.SaveFolderPath;
+            set => _imageCapture.SaveFolderPath = value;
+        }
+
         /// <summary>
         /// Image file name
         /// </summary>
-        public static string FileName { get => _imageCapture.FileName; set => _imageCapture.FileName = value; }
+        public static string FileName
+        {
+            get => _imageCapture.FileName;
+            set => _imageCapture.FileName = value;
+        }
 
         /// <summary>
         /// Capture and save image file base on this singleton config
@@ -52,6 +96,11 @@ namespace SuiSuiShou.CIC.Core
         public static void CaptureAndSaveImage()
         {
             _imageCapture.CaptureAndSaveImage();
+        }
+
+        public static Texture2D CaptureImage(int depth)
+        {
+            return _imageCapture.CaptureImage(TargetCamera, ImageResolution, depth);
         }
     }
 
