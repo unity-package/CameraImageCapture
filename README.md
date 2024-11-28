@@ -13,7 +13,7 @@ Capture camera image and save to a specified path.
 
 for version `1.0.0`
 ```csharp
-"net.suisuishou.cameraimagecapture":"https://github.com/wolf-org/CameraImageCapture.git#1.0.0",
+"net.suisuishou.cameraimagecapture":"https://github.com/unity-package/CameraImageCapture.git#1.0.0",
 ```
 
 ## Quick Start
